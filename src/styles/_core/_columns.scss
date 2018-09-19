@@ -1,0 +1,30 @@
+%column-container {
+  display: flex;
+  margin: -1 * $spacing-large;
+
+  @include respond-to(tablet) {
+    flex-wrap: wrap;
+    margin: -1 * $spacing-big;
+  }
+
+  @include respond-to(mobile) {
+    flex-wrap: wrap;
+    margin: -1 * $spacing-big 0;
+  }
+}
+
+%column {
+  flex: 1;
+  padding: $spacing-large;
+
+  @include respond-to(tablet) {
+    flex: initial;
+    flex-basis: 100%;
+    padding: $spacing-big;
+  }
+
+  @include respond-to(mobile) {
+    flex-basis: 100%;
+    padding: $spacing-big 0;
+  }
+}

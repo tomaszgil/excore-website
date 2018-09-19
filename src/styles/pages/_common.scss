@@ -1,0 +1,10 @@
+:root {
+  font-size: $root-font-size;
+}
+
+body {
+  @extend %typography-style-default;
+
+  margin: 0;
+  overflow-x: hidden;
+}

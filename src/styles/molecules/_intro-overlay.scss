@@ -1,0 +1,61 @@
+.intro-overlay {
+  background: $color-background-body;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  z-index: 200;
+  transition: left $time-loud $intro-timing-func $intro-overlay-out;
+
+  .intro-initialized & {
+    left: 100%;
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    content: "";
+    background: #009bfe;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translate(-100%);
+    transition: 
+      transform $time-loud $intro-timing-func $intro-initial-delay;
+
+    @include respond-to(tablet) {
+      display: none;
+    }
+
+    .intro-initialized & {
+      transform: translate(0);
+    }
+  }
+
+  &-text {
+    @extend %typography-style-default;
+
+    font-size: $font-size-large;
+    color: $color-text-default;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 
+      opacity $transition-loud,
+      transform $transition-loud;
+
+    .intro-animation & {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .intro-initialized & {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.featured-projects {
+  &-group {
+    @extend %column-container;
+
+    margin-bottom: $spacing-large;
+
+    @include respond-to(tablet) {
+      margin-bottom: $spacing-big;
+    }
+  }
+
+  &-item {
+    @extend %column;
+
+    &-image-wrapper {
+      position: relative;
+      display: block;
+      height: 450px;
+      width: 100%;
+
+      @include respond-to(tablet) {
+        height: 350px;
+      }
+
+      @include respond-to(mobile) {
+        height: 220px;
+      }
+    }
+
+    &-image-button {
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 20;
+      transition: opacity $transition-default;
+    }
+
+    &-image-wrapper:hover &-image-button {
+      opacity: 1;
+    }
+
+    &-title {
+      font-size: $font-size-medium;
+      margin-bottom: 0;
+    }
+
+    &-desc {
+      line-height: $line-height-small;
+      margin: $r-spacing-tiny 0 0;
+    }
+  }
+
+  &-controls {
+    text-align: right;
+  }
+}

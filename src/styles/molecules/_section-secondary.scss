@@ -1,0 +1,17 @@
+.section-secondary {
+  @extend %spacings-large;
+
+  background: $color-background-secondary;
+
+  &-wrapper {
+    @extend %container;
+  }
+
+  &-content {
+    @extend %inner-spacings-large;
+  }
+
+  .section-subtitle {
+    margin-top: 0;
+  }
+}

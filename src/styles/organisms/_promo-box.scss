@@ -1,0 +1,36 @@
+.promo-box {
+  &-statement {
+    @extend %typography-style-primary;
+
+    color: $color-text-primary;
+    max-width: 720px;
+    font-size: $font-size-large;
+    margin: $e-spacing-medium auto $e-spacing-big;
+    text-align: center;
+    line-height: $line-height-medium;
+
+    @include respond-to(tablet) {
+      font-size: $font-size-big;
+      margin: $e-spacing-default auto;
+    }
+  }
+
+  &-group {
+    display: flex;
+    margin: 0 auto;
+    max-width: 960px;
+
+    @include respond-to(tablet) {
+      flex-direction: column;
+    }
+
+    &-item {
+      flex: 1;
+      text-align: center;
+
+      @include respond-to(tablet) {
+        padding: $r-spacing-small 0;
+      }
+    }
+  }
+}

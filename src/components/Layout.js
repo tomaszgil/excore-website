@@ -1,14 +1,18 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Navbar from '../components/Navbar'
-import './all.sass'
+import Header from './Header'
+import Footer from './Footer';
+import IntroOverlay from './IntroOverlay';
+import '../styles/main.scss';
 
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title="Home | Gatsby + Netlify CMS" />
-    <Navbar />
-    <div>{children}</div>
+    <Header />
+    <IntroOverlay />
+    {children}
+    <Footer />
   </div>
 )
 

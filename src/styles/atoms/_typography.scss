@@ -1,0 +1,42 @@
+h1 {
+  @extend %typography-style-primary;
+
+  font-size: $font-size-enormous;
+}
+
+h2 {
+  @extend %typography-style-primary;
+
+  font-size: $font-size-large;
+}
+
+h3 {
+  @extend %typography-style-primary;
+
+  font-size: $font-size-big;
+}
+
+h4 {
+  @extend %typography-style-primary;
+
+  font-size: $font-size-medium;
+}
+
+h5 {
+  @extend %typography-style-primary;
+
+  font-size: $font-size-default;
+}
+
+h6 {
+  @extend %typography-style-primary;
+
+  font-size: $font-size-small;
+}
+
+p {
+  @extend %typography-style-default;
+
+  color: $color-text-default;
+  margin: $e-spacing-default 0 $e-spacing-medium;
+}

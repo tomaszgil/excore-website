@@ -1,0 +1,24 @@
+$time-subtle: 0.2s;
+$time-default: 0.4s;
+$time-loud: 1s;
+$time-extra-loud: 2s;
+
+$transition-none: 0s ease-out;
+$transition-subtle: $time-subtle ease-out;
+$transition-default: $time-default ease-in-out;
+$transition-loud: $time-loud ease-in-out;
+
+$shadow-image: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+$shadow-header: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+
+$intro-timing-func: cubic-bezier(0.81, 0.01, 0.29, 1.01);
+
+$intro-initial-delay: 0.6s;
+$intro-short-delay: 0.1s;
+$intro-delay: 0.2s;
+$intro-overlay-out: #{$intro-initial-delay + $time-loud};
+$intro-hero-in: #{$intro-initial-delay + $time-loud + $intro-delay};
+$intro-featured-project-in: $intro-overlay-out;
+$intro-header-elements-in: 2.2s;
+$intro-featured-elements-in: $intro-overlay-out;
+$intro-hero-elements-in: 3s;

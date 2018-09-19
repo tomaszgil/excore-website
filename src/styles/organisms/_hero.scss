@@ -1,0 +1,170 @@
+.hero {
+  background: $color-background-secondary;
+  height: 85vh;
+  max-height: 800px;
+  overflow: hidden;
+
+  @include respond-to(tablet) {
+    max-height: none;
+    height: auto;
+  }
+
+  &-wrapper {
+    @extend %container;
+
+    height: 100%;
+    position: relative;
+
+    &::after {
+      background: #009bfe;
+      display: block;
+      content: "";
+      position: absolute;
+      width: 200vw;
+      height: 200vw;
+      bottom: 0;
+      left: 40%;
+      transform: rotate(45deg) translate(-50%, 50%);
+      transform-origin: 0 100%;
+      transition: transform $time-extra-loud $intro-timing-func $intro-hero-in;
+      z-index: 0;
+
+      @include respond-to(tablet) {
+        display: none;
+      }
+  
+      .intro-initialized & {
+        transform: rotate(45deg) translate(0);
+      }
+    }
+  }
+
+  &-content {
+    @extend %column-container;
+    
+    height: 100%;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include respond-to(tablet) {
+      align-items: initial;
+      text-align: center;
+    }
+
+    @include respond-to(mobile) {
+      text-align: left;
+    }
+  }
+
+  &-copy,
+  &-featured-project {
+    @extend %column;
+
+    padding-top: 0;
+    padding-bottom: 0;
+    z-index: 10;
+  }
+
+  &-copy {
+    @include respond-to(tablet) {
+      padding-top: 12rem; 
+      padding-bottom: $r-spacing-large; 
+    }
+  }
+
+  &-featured-project {
+    align-self: flex-end;
+    position: relative;
+    right: 100vw;
+    transition: right $time-extra-loud $intro-timing-func $intro-featured-project-in;
+
+    .intro-initialized & {
+      right: 0;
+    }
+
+    &-img {
+      position: relative;
+      
+      img {
+        display: block;
+        position: relative;
+        bottom: 0;  
+        
+        @include respond-to(tablet) {
+          max-height: 400px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &-button-container {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transition: opacity $transition-default, transform $transition-default;
+      transition-delay: #{$intro-hero-elements-in + 3 * $intro-delay};
+      transform: translateY(30px);
+      opacity: 0;
+
+      .intro-initialized & {
+        opacity: 1;
+        transform: translateY(0);
+      } 
+      
+      @include respond-to(tablet) {
+        display: none;
+      }
+
+      .button-secondary {
+        transform-origin: 100% 100%;
+        transform: rotate(90deg) translate(-1 * $r-spacing-medium, $r-spacing-medium);
+      }
+    }
+  }
+
+  &-site-caption {
+    @extend %typography-style-secondary;
+
+    color: $color-text-secondary;
+    font-size: $font-size-small;
+    transition: opacity $transition-default, transform $transition-default;
+    transition-delay: #{$intro-hero-elements-in};
+    transform: translateY(-30px);
+    opacity: 0;
+
+    .intro-initialized & {
+      opacity: 1;
+      transform: translateY(0);
+    } 
+  }
+
+  &-site-title {
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: opacity $transition-default, transform $transition-default;
+    transition-delay: #{$intro-hero-elements-in + $intro-delay};
+
+    .intro-initialized & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @include respond-to(mobile) {
+      font-size: $font-size-large;
+    }
+  }
+
+  &-button-container {
+    transition-delay: #{$intro-hero-elements-in + $intro-delay};
+    transition: opacity $transition-default, transform $transition-default;
+    transition-delay: #{$intro-hero-elements-in + 2 * $intro-delay};
+    transform: translateY(-30px);
+    opacity: 0;
+
+    .intro-initialized & {
+      opacity: 1;
+      transform: translateY(0);
+    } 
+  }
+}

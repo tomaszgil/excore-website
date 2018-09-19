@@ -1,0 +1,51 @@
+.testimonial {
+  display: flex;
+  align-items: center;
+  margin: -1 * $spacing-large;
+
+  &-image {
+    flex: 1;
+    padding: $spacing-large;
+
+    @include respond-to(tablet) {
+      display: none;
+    }
+
+    img {
+      margin: $spacing-big;
+      box-shadow: $shadow-image;
+    }
+  }
+
+  &-information {
+    flex: 2;
+    padding: $spacing-large;
+  }
+
+  &-text {
+    @extend %typography-style-primary;
+
+    margin-top: 0;
+    color: $color-text-primary;
+    font-size: $font-size-large;
+    line-height: $line-height-medium;
+
+    @include respond-to(mobile) {
+      font-size: $font-size-big;
+    }
+  }
+
+  &-author {
+    @extend %typography-style-secondary;
+
+    color: $color-text-primary;
+    font-size: $font-size-small;
+    margin-bottom: 0;
+
+    &-desc {
+      font-size: $font-size-small;
+      margin-top: $e-spacing-tiny;
+      line-height: $line-height-small;
+    }
+  }
+}

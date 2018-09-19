@@ -1,0 +1,18 @@
+input,
+textarea {
+  @extend %typography-style-default;
+
+  border: none;
+  background: none;
+  color: $color-text-primary;
+  line-height: $line-height-medium;
+  font-size: $font-size-medium;
+  border-bottom: 2px solid $border-input;
+  outline: 0;
+  transition: border-bottom-color $transition-default;
+  padding: $r-spacing-small 0;
+
+  &:focus {
+    border-bottom-color: $color-accent;
+  }
+}

@@ -1,0 +1,19 @@
+.footer {
+  padding: $spacing-enormous 0;
+
+  &-content {
+    @extend %container;
+
+    display: flex;
+    justify-content: space-between;
+
+    @include respond-to(mobile) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  &-logo {
+    width: 100px;
+  }
+}

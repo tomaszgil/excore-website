@@ -1,0 +1,19 @@
+.homepage {
+  .section-promo,
+  .section-items {
+    &-content {
+      @extend %separator-line;
+    }
+  }
+
+  .section-promo,
+  .section-client-strip {
+    .section-primary-content {
+      @extend %separator-line;
+    }
+  }
+
+  .section-contact {
+    margin-bottom: 0;
+  }
+}

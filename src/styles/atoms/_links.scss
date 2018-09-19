@@ -1,0 +1,18 @@
+a {
+  @extend %typography-style-default;
+
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: inherit;
+
+  &.link-default {
+    font-weight: $font-weight-default-bold;
+    color: $color-accent;
+    transition: color $transition-subtle;
+
+    &:hover {
+      color: lighten($color-accent, 10%);
+    }
+  }
+}

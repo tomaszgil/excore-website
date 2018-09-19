@@ -1,0 +1,27 @@
+.section-items {
+  @extend %spacings-large;
+
+  &-wrapper {
+    @extend %container;
+  }
+
+  &-group {
+    @extend %column-container;
+
+    &-item {
+      @extend %column;
+
+      &-heading {
+        margin-top: 0;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+
+        @include respond-to(tablet) {
+          margin-bottom: $e-spacing-default;
+        }
+      }
+    }
+  }
+}

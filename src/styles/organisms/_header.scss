@@ -1,0 +1,163 @@
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: $spacing-big 0;
+  transition: background-color $transition-default,
+    padding-top $transition-default, padding-bottom $transition-default,
+    box-shadow $transition-default;
+
+  .is-scrolled & {
+    background: $color-background-primary;
+    padding: $spacing-default 0;
+    box-shadow: $shadow-header;
+  }
+
+  @include respond-to(mobile) {
+    padding: $spacing-medium 0;
+  }
+
+  &-wrapper {
+    @extend %container;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-branding {
+    position: relative;
+    top: 4px;
+    z-index: 300;
+  }
+
+  &-logo {
+    width: 80px;
+  }
+
+  &-navigation {
+    align-items: center;
+    display: flex;
+    background: $color-background-body;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transition: transform $transition-default;
+    width: 100vw;
+    z-index: 200;
+    transform: translateX(-100%);
+
+    &.is-opened {
+      transform: translateX(0);
+    }
+
+    &-wrapper {
+      @extend %container;
+
+      position: absolute;
+      width: 100%;
+    }
+
+    &-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-option {
+      margin: 0 -1 * $r-spacing-default;      
+
+      a {
+        @extend %typography-style-default;
+
+        color: $color-text-primary;
+        display: inline-block;
+        font-size: $font-size-large;
+        padding: $r-spacing-default;
+        transition: color $transition-subtle;
+      }
+    }
+  }
+
+  &-contact-button {
+    margin-right: $r-spacing-enormous;
+
+    @include respond-to(mobile) {
+      display: none;
+    }
+  }
+
+  &-floating {
+    position: fixed;
+    width: 100%;
+    z-index: 300;
+    left: 0;
+  }
+
+  &-nav-button {
+    display: flex;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    height: 40px;
+    margin-left: auto;
+    outline: 0;
+    right: 0;
+    padding: $r-spacing-small;
+    width: 40px;
+
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+
+    span,
+    span::before,
+    span::after {
+      background: $color-menu-button;
+      content: "";
+      position: relative;
+      display: block;
+      height: 2px;
+      transition: transform $transition-subtle,
+        background-color $transition-none $time-subtle,
+        top $transition-subtle #{1.5 * $time-subtle};
+      width: 30px;
+    }
+
+    span::before {
+      top: 8px;
+    }
+
+    span::after {
+      top: -10px;
+    }
+
+    &.is-opened {
+      span,
+      span::before,
+      span::after {
+        transition: top $transition-subtle,
+          background-color $transition-none $time-subtle,
+          transform $transition-subtle #{1.5 * $time-subtle};
+      }
+
+      span {
+        background: transparent;
+
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          top: -2px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}

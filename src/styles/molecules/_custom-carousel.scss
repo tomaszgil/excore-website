@@ -1,0 +1,111 @@
+.carousel {
+  margin-top: $r-spacing-enormous;
+
+  @include respond-to(mobile) {
+    margin-top: $r-spacing-large;
+  }
+
+  &-content {
+    padding: 0 $r-spacing-gigantic;
+    position: relative;
+
+    @include respond-to(tablet) {
+      padding: 0;
+    }
+  }
+
+  &-prev,
+  &-next {
+    @extend %button-default;
+
+    box-sizing: border-box;
+    height: 25px;
+    padding: $r-spacing-big;
+    position: absolute;
+    top: 50%;
+    font-size: 0;
+    width: 25px;
+    transform: translateY(-50%);
+
+    @include respond-to(tablet) {
+      display: none;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-left: 2px solid $color-border-button;
+      border-bottom: 2px solid $color-border-button;
+      width: 25px;
+      height: 25px;
+      transition: border-color $transition-subtle;
+    }
+
+    &:hover::after {
+      border-color: $color-border-button-hover;
+    }
+  }
+
+  &-prev {
+    left: 0;
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
+  &-next {
+    right: 0;
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(225deg);
+    }
+  }
+
+  &-indicators {
+    margin: $r-spacing-enormous 0 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+
+    @include respond-to(mobile) {
+      margin-top: $r-spacing-big;
+    }
+
+    > li {
+      padding: 0 $r-spacing-default;
+    }
+
+    &-button {
+      @extend %button-default;
+
+      box-sizing: border-box;
+      position: relative;
+      padding: $r-spacing-default;
+      height: 10px;
+      width: 40px;
+      font-size: 0;
+
+      &::after {
+        display: block;
+        content: "";
+        background: $color-border-button;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        transition: background-color $transition-subtle;
+      }
+
+      &.is-active::after {
+        background: $color-border-button-hover;
+      }
+    }
+  }
+}

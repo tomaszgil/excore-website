@@ -1,0 +1,50 @@
+.button-primary {
+  @extend %button-default;
+  @extend %typography-style-default;
+
+  background: $color-background-button;
+  border-radius: 50px;
+  color: $color-text-primary;
+  font-size: $font-size-small;
+  font-weight: $font-weight-default-bold;
+  padding: $r-spacing-tiny $r-spacing-big;
+  transition: background-color $transition-default;
+
+  &:hover {
+    background: $color-background-button-hover;
+  }
+
+  + [class^="button-*"] {
+    margin-left: $spacing-medium;
+  }
+}
+
+.button-secondary {
+  @extend %button-default;
+  @extend %typography-style-secondary;
+
+  background: transparent;
+  border-bottom: 2px solid $color-border-button;
+  color: $color-text-primary;
+  font-size: $font-size-small;
+  opacity: 1;
+  padding: $r-spacing-small 0;
+  transition: border-bottom-color $transition-subtle;
+
+  &:hover {
+    border-bottom-color: $color-border-button-hover;
+  }
+
+  + [class^="button-*"] {
+    margin-left: $spacing-medium;
+  }
+
+  &.inverse {
+    color: $color-text-inverse-primary;
+    border-bottom-color: $color-border-button-inverse;
+
+    &:hover {
+      border-bottom-color: $color-border-button-inverse-hover;
+    }
+  }
+}

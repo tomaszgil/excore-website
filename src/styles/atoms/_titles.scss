@@ -1,0 +1,15 @@
+.section-title {
+  @extend %typography-style-primary;
+
+  color: $color-text-primary;
+  font-size: $font-size-large;
+  margin: $e-spacing-small 0 $e-spacing-medium;
+}
+
+.section-subtitle {
+  @extend %typography-style-secondary;
+
+  color: $color-text-secondary;
+  font-size: $font-size-small;
+  margin: $e-spacing-default 0;
+}

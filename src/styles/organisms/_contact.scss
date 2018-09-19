@@ -1,0 +1,23 @@
+.contact {
+  @extend %column-container;
+
+  &-image {
+    @extend %column;
+
+    @include respond-to(tablet) {
+      order: 2;
+    }
+  }
+
+  &-form {
+    @extend %column;
+  }
+
+  .button-primary {
+    display: block;
+    margin-left: auto;
+    margin-bottom: $r-spacing-big;
+    font-size: $font-size-default;
+    padding: $r-spacing-small $r-spacing-large;
+  }
+}

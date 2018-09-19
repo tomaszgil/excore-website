@@ -1,0 +1,11 @@
+.section-primary {
+  @extend %spacings-large;
+
+  &-wrapper {
+    @extend %container;
+  }
+
+  .section-subtitle {
+    text-align: center;
+  }
+}

@@ -1,0 +1,8 @@
+%separator-line {
+  border-bottom: 1px solid $line;
+  padding-bottom: $spacing-epic;
+
+  @include respond-to(tablet) {
+    padding-bottom: $spacing-gigantic;
+  }
+}

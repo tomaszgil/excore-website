@@ -1,0 +1,19 @@
+%typography-style-primary {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-heading;
+  line-height: $line-height-small;
+}
+
+%typography-style-secondary {
+  font-family: $font-family-default;
+  font-weight: $font-weight-default-bold;
+  line-height: $line-height-small;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+%typography-style-default {
+  font-family: $font-family-default;
+  font-size: $font-size-default;
+  line-height: $line-height-big;
+}

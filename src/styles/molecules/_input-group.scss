@@ -1,0 +1,24 @@
+.input-group {
+  position: relative;
+  margin-bottom: $r-spacing-big;
+
+  &-label {
+    top: $r-spacing-large;
+    display: block;
+    font-size: $font-size-medium;
+    color: $color-text-secondary;
+    position: absolute;
+    transition: top $transition-subtle, font-size $transition-subtle;
+  }
+
+  &-input {
+    padding-top: $r-spacing-large;
+    width: 100%;
+  }
+
+  &.is-filled &-label,
+  &-input:focus ~ &-label {
+    top: 0;
+    font-size: $font-size-small;
+  }
+}
